@@ -1,0 +1,28 @@
+
+.DayDate {
+  border:none; readonly:True;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.hrs {
+  display: inline-block;
+  width: 40px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  visibility: visible;
+}
+
+.calcHrs {
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 40px:
+}
+
+.ptoHrs {
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 40px:
+}
+
+.headding {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

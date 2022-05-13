@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lan="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Append1</title>
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/moment.js"></script>
+    <link rel="stylesheet" href="timesheet.css" type="text/css">
+    <link rel="stylesheet" href="layoutTest.css" type="text/css">
+    <script src="js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui.1.12.1.custom/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="js/jquery-ui.1.12.1.custom/jquery-ui.structure.css" type="text/css">
+    <link rel="stylesheet" href="js/jquery-ui.1.12.1.custom/jquery-ui.theme.css" type="text/css">
+
+      <script>
+      function addStuff(){
+        //var useID = divID;
+        var content = 5;
+        document.getElementByID("div1").innerHTML = content;
+        return 1;
+
+      }
+    </script>
+
+    </head>
+    <body style="background-color:#aeaede">
+      <h4>Try This!</h4>
+      <button onclick="addStuff()">Click to add</button>
+      <br>
+      <div id="div1">test again</div>
+
+    </body>
+  </html>

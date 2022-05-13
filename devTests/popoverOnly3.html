@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Popover Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+      <link rel="stylesheet" href='popoverTest.css'>
+    </head>
+    <body>
+
+      <!--<div class="popover__wrapper">
+    <a href="#" data-toggle="popover">
+      <h2 class="popover__title">Hover:me</h2>
+    </a>
+    <div class="popover__content">
+      <p class="popover__message">Fill in the blank</p>
+      <textarea id="ta1" ></textarea>
+    </div>
+  </div> -->
+<script>
+function activatePop(pop){
+if documentGetElementByID(pop).className = "active-pop";
+}
+</script>
+
+  <div class="popover__wrapper" id="testWrapper">
+  <a href="#" onclick="activatePop('testContent')"><img src="img/Note-icon.png"/>
+  <h2 class="popover__title">Hover:me</h2></a>
+  <div class="popover__content" id="testContent">
+  <p class="popover__message">Fill in the blank</p>
+  <textarea id="ta1" ></textarea>
+  </div>
+  </div>
+
+    </body>
+    </html>

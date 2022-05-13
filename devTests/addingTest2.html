@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addingTest</title>
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/moment.js"></script>
+    <link rel="stylesheet" href="timesheet.css" type=text/css>
+
+<script>
+
+   var hrsDay1 = ["hrs1-0"];
+   var regDay1 = ["reg1-0"];
+   var otDay1 = ["ot1-0"];
+   var dtDay1 = ["dt1-0"];
+   var sickDay1 = ["sick1-0"];
+   var vacDay1 = ["vaca1-0"];
+   var holiDay1 = ["holi1-0"];
+
+$(document).ready(function () {
+    var counter1 = 2;
+    var counter2 = 2;
+    var counter3 = 2;
+    var counter4 = 2;
+    var counter5 = 2;
+
+    $("#addrow1").on("click", function () {
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Remove >"></td>';
+
+        cols += '<td><input type="text" class="form-control" size="8" name="project1' + counter1 + '"/></td>';
+        cols += '<td><input type="text" class="form-control" size="4" name="pay-type1' + counter1 + '"/></td>';
+        cols += '<td><input type="time" class="form-control" "name="timein1-' + counter1 + '" id="timein1-' + counter1 + '"\
+                oninput="checkThenCalc(\'0\', \'timein1-' + counter1 +'\', \'timeout1-' + counter1 +'\', \'hrs1-' + counter1 +'\')"/></td>';
+
+        cols += '<td><input type="time" class="form-control" name="timeout1-' + counter1 + '" id="timeout1-' + counter1 + '"\
+                oninput="checkThenCalc(\'0\', \'timein1-' + counter1 +'\', \'timeout1-' + counter1 +'\', \'hrs1-' + counter1 +'\')"/></td>';
+
+        cols += '<td><div class="hrs" name="hrs1-' + counter1 + '" id="hrs1-' + counter1 + '">0.00</div>\
+                <div class="calcHrs" name="reg1-' + counter1 + '" id="reg1-' + counter1 + '">0.00</div>\
+                <div class="calcHrs" name="ot1-' + counter1 + '" id="ot1-' + counter1 + '">0.00</div>\
+                <div class="calcHrs" name="dt1-' + counter1 + '" id="dt1-' + counter1 + '">0.00</div>\
+                <div class="calcHrs" name="sick1-' + counter1 + '" id="sick1-' + counter1 + '">0.00</div>\
+                <div class="calcHrs" name="vaca1-' + counter1 + '" id="vaca1-' + counter1 + '">0.00</div>\
+                <div class="calcHrs" name="hol1-' + counter1 + '" id="hol1-' + counter1 + '">0.00</div>\
+                </td>';
+        cols += '<td><input type="text" class="form-control" size="2" name="comment1-' + counter1 + '"/></td>';
+
+//Add row to Hours Lines Array
+        newRow.append(cols);
+        $("table.order-list1").append(newRow);
+        hrsDay1.push('hrs1-' + counter1);
+        counter1++;
+    });
+
+//Remove row from Hours Lines Array
+    $("table.order-list1").on("click", ".ibtnDel", function (event) {
+      var hrsVal = $(this).closest('tr').find('.hrs').attr("id");
+      var indxVal = hrsDay1.indexOf(hrsVal);
+      hrsDay1.splice(1, 1);
+      $(this).closest("tr").remove();
+      getTotals('dayTotalWkHrs', hrsDay1);
+    });
+});
+</script>
+
+<script>
+//Add all hours
+  function getTotals(fieldd,arrayd){
+    var array1 = arrayd;
+    var sumValues = 0;
+    //var valueArray =[];
+    array1.forEach(gtValues);
+    document.getElementById(fieldd).innerHTML = sumValues;
+    //document.getElementById(fieldd).innerHTML = valueArray;
+      function gtValues(item){
+        if (document.getElementById(item).innerHTML == '') {
+          sumValues = 0 + sumValues;
+          //valueArray.push("0");
+        } else {
+          sumValues = sumValues + Number(document.getElementById(item).innerHTML);
+        //valueArray.push(document.getElementById(item).value);
+      }
+      }
+  }
+</script>
+
+<script>
+//get array values
+  function getArray(fieldd,arrayd){
+    var array2 = arrayd;
+    //var sumValues = 0;
+    var valueArray = [];
+    array2.forEach(gtArValues);
+    //document.getElementById(fieldd).innerHTML = sumValues;
+    document.getElementById(fieldd).innerHTML = valueArray;
+      function gtArValues(item){
+        if (document.getElementById(item).innerHTML == '') {
+          //sumValues = 0 + sumValues;
+          valueArray.push("0");
+        } else {
+          //sumValues = sumValues + Number(document.getElementById(item).innerHTML);
+          valueArray.push(document.getElementById(item).innerHTML);
+        }
+      }
+  }
+</script>
+
+<script>
+//get values to add from Array
+  function calcDayHours(dayArray){
+    var arryOverD = 0;
+    dayArray.forEach(findIds);
+
+
+
+  }
+
+
+</script>
+
+<script>
+//script for button
+  function showReg(){
+    var regD1 = regDay1;
+    document.getElementById("showRegHrs").innerHTML = regD1;
+  }
+</script>
+
+  <script>
+  function GetDate1() {
+    var formdate = document.getElementById("maindate").value;
+    document.getElementById("day1").innerHTML = moment(formdate).format('dddd');
+    document.getElementById("date1").value = moment(formdate).format('M/D/YYYY');
+    document.getElementById("day2").innerHTML = moment(formdate).add(1,'day').format('dddd');
+    document.getElementById("date2").value = moment(formdate).add(1,'day').format('M/D/YYYY');
+    document.getElementById("day3").innerHTML = moment(formdate).add(2,'day').format('dddd');
+    document.getElementById("date3").value = moment(formdate).add(2,'day').format('M/D/YYYY');
+    document.getElementById("day4").innerHTML = moment(formdate).add(3,'day').format('dddd');
+    document.getElementById("date4").value = moment(formdate).add(3,'day').format('M/D/YYYY');
+    document.getElementById("day5").innerHTML = moment(formdate).add(4,'day').format('dddd');
+    document.getElementById("date5").value = moment(formdate).add(4,'day').format('M/D/YYYY');
+  }
+  </script>
+  <script>
+  function checkThenCalc(day, tI, tO, hrs){
+    document.getElementById(hrs).innerHTML = "";
+    var formdate = document.getElementById("maindate").value;
+    var day = moment(formdate).add(day, 'day').format('Y-MM-DD');
+    var timeIn = document.getElementById(tI).value;
+    var timeOut = document.getElementById(tO).value;
+    if (formdate == ""){
+      return;
+    }
+    else if (timeIn == "") {
+      return;
+    }
+    else if (timeOut == "") {
+      return;
+    }
+    else {
+      var formatI = day + "T" + timeIn +":00";
+      var formatO = day + "T" + timeOut +":00";
+      var timeStart = new Date(formatI);
+      var timeStop = new Date(formatO);
+      var timeDiff = ((timeStop - timeStart) / 3600000).toFixed(2);
+      document.getElementById(hrs).innerHTML = timeDiff;
+      getTotals('dayTotalWkHrs', hrsDay1);
+    }
+  }
+  </script>
+</head>
+<body>
+  <form>
+    <table class="maintable" align="center" border="1">
+      <tr>
+        <td valign="top" width="300">
+          <div class="datepicker" id="dp1">
+            <input type="date" id="maindate" oninput="GetDate1()"/>
+          </div>
+        </td>
+        <td><table class="formtable" border="2px">
+          <tr>
+            <td>
+              <div class="container">
+                <table id="myTable1" class="table order-list1">
+                  <thead>
+                    <tr>
+                      <td valign="top" id="day1" width="125"></td>
+                      <td valign="top">Project</td>
+                      <td valign="top">Pay Type</td>
+                      <td valign="top">Time in</td>
+                      <td valign="top">Time out</td>
+                      <td valign="top">
+                        <div class="calcHrs">Total</div>
+                        <div class="calcHrs">REG</div>
+                        <div class="calcHrs">OT</div>
+                        <div class="calcHrs">DT</div>
+                        <div class="calcHrs">Sick</div>
+                        <div class="calcHrs">Vac</div>
+                        <div class="calcHrs">Hol</div>
+                      </td>
+                      <td valign="top">comment</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="col-sm-4">
+                        <input class="DayDate" id="date1" type="text" size="4"/>
+                      </td>
+
+                      <td class="col-sm-4"><input type="text" size="8" name="project" class="form-control" /></td>
+                      <td class="col-sm-4"><input type="text" size="4" name="pay-type" class="form-control" /></td>
+                      <td class="col-sm-4"><input type="time" name="timein1" id="timein1" class="form-control" oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/></td>
+                      <td class="col-sm-4"><input type="time" name="timeout1" id="timeout1" class="form-control" oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/></td>
+                      <td><div class="hrs" name="hrs1-0" id="hrs1-0"></div>
+                      <div class="calcHrs" name="reg1-0" id="reg1-0">0.00</div>
+                      <div class="calcHrs" name="ot1-0" id="ot1-0">0.00</div>
+                      <div class="calcHrs" name="dt1-0" id="dt1-0">0.00</div>
+                      <div class="calcHrs" name="sick1-0" id="sick1-0">0.00</div>
+                      <div class="calcHrs" name="vaca1-0" id="vaca1-0">0.00</div>
+                      <div class="calcHrs" name="hol1-0" id="hol1-0">1.00</div>
+                      </td>
+
+                      <td class="col-sm-1"><input type="text" size="2" name="comment"  class="form-control"/></td>
+
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td class="col-sm-4"></td>
+                      <td colspan="3">
+                        <input type="button" class="btn btn-lg btn-block " border="1" id="addrow1" value="Add Additional Time-in / Time-out" />
+                      </td>
+                      <td>Total: </td>
+                      <td>
+                        <div class="calcHrs" id="dayTotalWkHrs">0.00</div>
+                        <div class="calcHrs" id="dayRegTotal1">0.00</div>
+                        <div class="calcHrs" id="dayOTTotal1">0.00</div>
+                        <div class="calcHrs" id="dayDTTotal1">0.00</div>
+                        <div class="calcHrs" id="daysickTotal1">0.00</div>
+                        <div class="calcHrs" id="dayvacaTotal1">0.00</div>
+                        <div class="calcHrs" id="dayholiTotal1">0.00</div>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+                </td>
+              </tr>
+            </table>
+        </td>
+        </tr>
+      </table>
+      </form>
+      <button onclick="getArray('showRegHrs',hrsDay1)">Show Array</button>
+      <button onclick="getTotals('findVal',hrsDay1)">Show Reg Hours</button>
+      <div id="showRegHrs"></div><br>
+      <div id="findVal"></div><br>
+      <div id="findIndx"></div>
+
+    </body>
+ </html>
