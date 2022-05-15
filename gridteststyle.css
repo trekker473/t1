@@ -1,0 +1,12 @@
+.main{
+  display:grid;
+  grid-template-columns: 1fr 100px 100px 200px;
+}
+
+.even{
+  background-color: #dd9933;
+}
+
+.odd{
+  background-color: #3399dd;
+}

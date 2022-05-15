@@ -10,8 +10,8 @@
     <script src="js/jquery-3.6.0.js"></script>
     <script src="js/moment.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="img/MyClock.sm.png" />
-    <link rel="stylesheet" href="timesheet.css" type="text/css">
-    <link rel="stylesheet" href="layoutTest.css" type="text/css">
+
+
     <script src="js/jquery-ui-1.13.1/jquery-ui.js"></script>
     <script src="timecalc.js"></script>
     <link rel="stylesheet" href="js/jquery-ui-1.13.1/jquery-ui.css" type="text/css">
@@ -21,7 +21,7 @@
           rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
           crossorigin="anonymous"/>
-
+    <link rel="stylesheet" href="layoutTest.css4" type="text/css">
 
 
   </head>
@@ -49,12 +49,12 @@
     </nav>
 
     <!--Main area-->
-    <section class="bg-light p5">
+    <section class="bg-light">
       <div class="container">
         <div class="row">
     <!--Calendar area-->
-          <div class="col-md-4 bg-dark">
-            <div class="block calendarBar" name="calendarBar"id="calendarBar">
+          <div class="col-md-3 bg-dark">
+            <div class="calendarBar" name="calendarBar"id="calendarBar">
               <label class="weekTitle">Work Week :</label>
               <div class="week-picker"></div>
               <div class="daterange" id="activeWeek"> <br> <span id="startDate"></span>&nbsp &nbsp - &nbsp &nbsp<span id="endDate"></span><br><p> &nbsp </p></div><br>
@@ -63,74 +63,76 @@
           </div>
 
       <!--Timesheet Main Section-->
-          <div class="col-md-8 bg-primary">
-            <div class="mainTable" id="timesheetTable">
-              <div class="row dayContainer">
-                <div class="col-sm-1 dayOfWeek leftField" id="day1"></div>
-                <div class="col-sm-1 headding">Project</div>
-                <div class="col-sm-1 headding">Pay Type</div>
-                <div class="col-sm-2 headding">Time In</div>
-                <div class="col-sm-2 headding">Time Out</div>
-                <div class="col-sm headding hrs timeDivsH">Hours</div>
-                <div class="col-sm headding timeDivsH">REG</div>
-                <div class="col-sm headding timeDivsH">OT</div>
-                <div class="col-sm headding timeDivsH">DT</div>
-                <div class="col-sm headding timeDivsH">PTO</div>
-                <div class="col-sm headding">Notes</div>
-              </div>
+          <div class="weekContainer col-md-9 ">
+            <div class="bg-primary dayContainer">
+              <div class="mainTable" id="timesheetTable">
+                <div class="row dayContainer">
+                  <div class="col-sm-1 dayOfWeek leftField" id="day1"></div>
+                  <div class="col-sm-1 headding">Project</div>
+                  <div class="col-sm-1 headding">Pay Type</div>
+                  <div class="col-sm-2 headding">Time In</div>
+                  <div class="col-sm-2 headding">Time Out</div>
+                  <div class="col-sm headding hrs timeDivsH">Hours</div>
+                  <div class="col-sm headding timeDivsH">REG</div>
+                  <div class="col-sm headding timeDivsH">OT</div>
+                  <div class="col-sm headding timeDivsH">DT</div>
+                  <div class="col-sm headding timeDivsH">PTO</div>
+                  <div class="col-sm headding">Notes</div>
+                </div>
 
-              <div class="row">
-                <div class="col-sm-1 leftField">
-                  <input class="dayDate" id="date1" type="text"/>
-                </div>
-                <div class="col-sm-1">
-                  <select name="project1-0" id="project1-0" />
-                    <option value="TLS" selected>TLS</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-                <div class="col-sm-1">
-                  <select name="pay-type1-0" id="pay-type1-0"/>
-                    <option value="Standard" selected>Standard</option>
-                    <option value="Vacation">Vacation</option>
-                    <option value="Sick">Sick</option>
-                    <option value="Holiday">Holiday</option>
-                    <option value="Other">Other</option>
-                    <option value="NH">No Hours</option>
-                  </select>
-                </div>
-                <div class="col-sm-2 ">
-                  <input type="time" name="timein1" id="timein1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
-                </div>
-                <div class="col-sm-2">
-                  <input type="time" name="timeout1" id="timeout1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
-                </div>
-                <div class="col-sm hrs" name="hrs1-0" id="hrs1-0">0.00</div>
-                <div class="col-sm timeDivs calcHrs" name="reg1-0" id="reg1-0">0.00</div>
-                <div class="col-sm timeDivs calcHrs" name="ot1-0" id="ot1-0">0.00</div>
-                <div class="col-sm timeDivs calcHrs" name="dt1-0" id="dt1-0">0.00</div>
-                <div class="col-sm timeDivs calcHrs" name="pto1-0" id="pto1-0">0.00</div>
-                <div class="col-sm"><img src="img/Note-icon-sm.png" name="noteLink1"  class="note1"/></div>
-              <div class="row">
+                <div class="row">
+                  <div class="col-sm-1 leftField">
+                    <input class="dayDate" id="date1" type="text"/>
+                  </div>
+                  <div class="col-sm-1">
+                    <select name="project1-0" id="project1-0" />
+                      <option value="TLS" selected>TLS</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-1">
+                    <select name="pay-type1-0" id="pay-type1-0"/>
+                      <option value="Standard" selected>Standard</option>
+                      <option value="Vacation">Vacation</option>
+                      <option value="Sick">Sick</option>
+                      <option value="Holiday">Holiday</option>
+                      <option value="Other">Other</option>
+                      <option value="NH">No Hours</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-2 ">
+                    <input type="time" name="timein1" id="timein1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
+                  </div>
+                  <div class="col-sm-2">
+                    <input type="time" name="timeout1" id="timeout1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
+                  </div>
+                  <div class="col-sm hrs" name="hrs1-0" id="hrs1-0">0.00</div>
+                  <div class="col-sm timeDivs calcHrs" name="reg1-0" id="reg1-0">0.00</div>
+                  <div class="col-sm timeDivs calcHrs" name="ot1-0" id="ot1-0">0.00</div>
+                  <div class="col-sm timeDivs calcHrs" name="dt1-0" id="dt1-0">0.00</div>
+                  <div class="col-sm timeDivs calcHrs" name="pto1-0" id="pto1-0">0.00</div>
+                  <div class="col-sm"><img src="img/Note-icon-sm.png" name="noteLink1"  class="note1"/></div>
+                <div class="row">
 
-                <div class="col-sm">
+                  <div class="col-sm">
 
+                  </div>
+                  <div class="col-sm">
+                    <button type="button" class="btn btn-lg btn-block" id="addrow1" value="Add Additional Time-in / Time-out">Add Additional Time-in / Time-out</button>
+                  </div>
+                  <div class="col-sm headding dayTotal">Total:</div>
+                  <div class="col-sm timeDivsT hrs" id="dayTotalWkHrs">0.00</div>
+                  <div class="col-sm timeDivsT" id="dayRegTotal1">0.00</div>
+                  <div class="col-sm timeDivsT" id="dayOTTotal1">0.00</div>
+                  <div class="col-sm timeDivsT" id="dayDTTotal1">0.00</div>
+                  <div class="col-sm timeDivsT" id="dayPTO">0.00</div>
                 </div>
-                <div class="col-sm">
-                  <input type="button" class="btn btn-lg btn-block " border="1" id="addrow1" value="Add Additional Time-in / Time-out" />
                 </div>
-                <div class="col-sm headding dayTotal">Total:</div>
-                <div class="col-sm timeDivsT hrs" id="dayTotalWkHrs">0.00</div>
-                <div class="col-sm timeDivsT" id="dayRegTotal1">0.00</div>
-                <div class="col-sm timeDivsT" id="dayOTTotal1">0.00</div>
-                <div class="col-sm timeDivsT" id="dayDTTotal1">0.00</div>
-                <div class="col-sm timeDivsT" id="dayPTO">0.00</div>
-              </div>
               </div>
             </div>
-<!--End of time section-->
           </div>
-        </div>
+    <!--End of time section-->
+      </div>
 
       </div>
 
