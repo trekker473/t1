@@ -22,7 +22,7 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
           crossorigin="anonymous"/>
     <link rel="stylesheet" href="layoutTest.css4" type="text/css">
-
+  <link rel="stylesheet" href="layoutTestT1.css" type="text/css">
 
   </head>
   <body>
@@ -81,16 +81,16 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-sm-1 leftField">
+                  <div class="col-sm-1 leftField odd">
                     <input class="dayDate" id="date1" type="text"/>
                   </div>
-                  <div class="col-sm-1">
+                  <div class="col-sm-1 even">
                     <select name="project1-0" id="project1-0" />
                       <option value="TLS" selected>TLS</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>
-                  <div class="col-sm-1">
+                  <div class="col-sm-1 odd">
                     <select name="pay-type1-0" id="pay-type1-0"/>
                       <option value="Standard" selected>Standard</option>
                       <option value="Vacation">Vacation</option>
@@ -100,37 +100,39 @@
                       <option value="NH">No Hours</option>
                     </select>
                   </div>
-                  <div class="col-sm-2 ">
+                  <div class="col-sm-2 even">
                     <input type="time" name="timein1" id="timein1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
                   </div>
-                  <div class="col-sm-2">
+                  <div class="col-sm-2 odd">
                     <input type="time" name="timeout1" id="timeout1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
                   </div>
-                  <div class="col-sm hrs" name="hrs1-0" id="hrs1-0">0.00</div>
-                  <div class="col-sm timeDivs calcHrs" name="reg1-0" id="reg1-0">0.00</div>
-                  <div class="col-sm timeDivs calcHrs" name="ot1-0" id="ot1-0">0.00</div>
-                  <div class="col-sm timeDivs calcHrs" name="dt1-0" id="dt1-0">0.00</div>
-                  <div class="col-sm timeDivs calcHrs" name="pto1-0" id="pto1-0">0.00</div>
-                  <div class="col-sm"><img src="img/Note-icon-sm.png" name="noteLink1"  class="note1"/></div>
+                  <div class="col-sm hrs even" name="hrs1-0" id="hrs1-0">0.00</div>
+                  <div class="col-sm timeDivs calcHrs odd" name="reg1-0" id="reg1-0">0.00</div>
+                  <div class="col-sm timeDivs calcHrs even" name="ot1-0" id="ot1-0">0.00</div>
+                  <div class="col-sm timeDivs calcHrs odd" name="dt1-0" id="dt1-0">0.00</div>
+                  <div class="col-sm timeDivs calcHrs even" name="pto1-0" id="pto1-0">0.00</div>
+                  <div class="col-sm"><img src="img/Note-icon-sm.png" name="noteLink1"  class="note1 odd"/></div>
+                </div>
                 <div class="row">
 
-                  <div class="col-sm">
+                  <div class="col-sm odd">
 
                   </div>
-                  <div class="col-sm">
-                    <button type="button" class="btn btn-lg btn-block" id="addrow1" value="Add Additional Time-in / Time-out">Add Additional Time-in / Time-out</button>
+                  <div class="col-sm-5 even">
+                    <button type="button" class="btn btn-lg btn-block " id="addrow1" value="Add Additional Time-in / Time-out">Add Additional Time-in / Time-out</button>
                   </div>
-                  <div class="col-sm headding dayTotal">Total:</div>
-                  <div class="col-sm timeDivsT hrs" id="dayTotalWkHrs">0.00</div>
-                  <div class="col-sm timeDivsT" id="dayRegTotal1">0.00</div>
-                  <div class="col-sm timeDivsT" id="dayOTTotal1">0.00</div>
-                  <div class="col-sm timeDivsT" id="dayDTTotal1">0.00</div>
-                  <div class="col-sm timeDivsT" id="dayPTO">0.00</div>
+                  <div class="col-sm headding dayTotal odd">Total:</div>
+                  <div class="col-sm timeDivsT hrs even" id="dayTotalWkHrs">0.00</div>
+                  <div class="col-sm timeDivsT odd" id="dayRegTotal1">0.00</div>
+                  <div class="col-sm timeDivsT even" id="dayOTTotal1">0.00</div>
+                  <div class="col-sm timeDivsT odd" id="dayDTTotal1">0.00</div>
+                  <div class="col-sm timeDivsT even" id="dayPTO">0.00</div>
+                  <div class="col-sm odd"> space </div>
                 </div>
                 </div>
               </div>
             </div>
-          </div>
+
     <!--End of time section-->
       </div>
 

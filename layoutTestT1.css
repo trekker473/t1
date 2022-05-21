@@ -1,0 +1,15 @@
+body {
+  background-color: #339988;
+}
+.addhours {
+  grid-column-start: span 3;
+
+}
+
+.odd{
+  background-color: #dedeff;
+}
+
+.even{
+  background-color: #ffabab;
+}
