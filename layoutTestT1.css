@@ -13,3 +13,14 @@ body {
 .even{
   background-color: #ffabab;
 }
+
+.outlined{
+  border: solid;
+  border-color:black;
+  border-radius:2;
+}
+
+.main{
+  display:grid;
+  grid-template-columns: 100px 80px 100px 185px 185px 55px 55px 55px 55px 55px 55px;
+}
