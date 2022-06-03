@@ -83,14 +83,14 @@
                 <div class="leftField odd">
                     <input class="dayDate" id="date1" type="text"/>
                   </div>
-                  <div class="even">
-                    <select name="project1-0" id="project1-0" />
+                  <div class="even dropDown">
+                    <select name="project1-0" class="dropDown1" id="project1-0" />
                       <option value="TLS" selected>TLS</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>
-                  <div class="odd">
-                    <select name="pay-type1-0" id="pay-type1-0"/>
+                  <div class="odd dropDown">
+                    <select name="pay-type1-0" class="dropDown1" id="pay-type1-0"/>
                       <option value="Standard" selected>Standard</option>
                       <option value="Vacation">Vacation</option>
                       <option value="Sick">Sick</option>
@@ -100,10 +100,10 @@
                     </select>
                   </div>
                   <div class="even">
-                    <input type="time" name="timein1" id="timein1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
+                    <input type="time" name="timein1" class="timeInput" id="timein1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
                   </div>
                   <div class="odd">
-                    <input type="time" name="timeout1" id="timeout1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
+                    <input type="time" name="timeout1" class="timeInput" id="timeout1"  oninput="checkThenCalc('0', 'timein1','timeout1', 'hrs1-0')"/>
                   </div>
                   <div class="hrs even" name="hrs1-0" id="hrs1-0">0.00</div>
                   <div class="timeDivs calcHrs odd" name="reg1-0" id="reg1-0">0.00</div>
@@ -144,7 +144,7 @@
 
 
             <div class="leftField odd">
-                <input class="dayDate" id="date1" type="text"/>
+                <input class="dayDate"type="text"/>
               </div>
               <div class="even">
                 <select name="project1-0" id="project1-0" />
