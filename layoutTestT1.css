@@ -22,7 +22,8 @@ body {
 
 .main{
   display:grid;
-  grid-template-columns: 100px 110px 130px 160px 160px 50px 50px 50px 50px 50px 50px;
+  grid-template-columns: 7em 7em 8em 10em 10em 3em 3em 3em 3em 3em 3em;
+  /*100px 110px 130px 160px 160px 50px 50px 50px 50px 50px 50px;*/
 }
 .dropDown{
   font-size:1.5em;
